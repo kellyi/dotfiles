@@ -1,0 +1,23 @@
+OPTIONS=pettype:cat
+OPTIONS=color, boulder:0
+OPTIONS=confirm, hilite_pet, safe_pet
+OPTIONS=!autopickup
+OPTIONS=fruit:kiwi
+OPTIONS=name:kelly
+OPTIONS=lit_corridor
+OPTIONS=menucolors
+OPTIONS=!rest_on_space
+OPTIONS=time
+
+MENUCOLOR="blessed"=cyan&bold
+MENUCOLOR="blessed"=cyan&bold
+MENUCOLOR="cursed"=orange&bold
+MENUCOLOR="uncursed"=green
+
+MENUCOLOR="loadstone\|wand \(of\|called\) cancellation"=underline
+MENUCOLOR="Amulet of Yendor named"=magenta                           # color only the real Amulet
+MENUCOLOR="gold piece"=yellow
+
+MENUCOLOR="[a-zA-Z] - [a-zA-Z ]+[ ]+[0-9]+\*[ ]+[a-z]+[ ]+[0-9]+%"=magenta  # forgotten spell
+# This version will work on NAO.
+# MENUCOLOR="[a-zA-Z ]+[ ]+[0-9]+\*[ ]+[a-z]+[ ]+[0-9]+%"=magenta  # forgotten spell
