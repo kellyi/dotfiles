@@ -4,7 +4,7 @@ export LSCOLORS=ExFxBxDxCxegedabagacad
 
 alias ls='ls -laGFh'
 
-export PATH="/usr/local/sbin:$PATH:$HOME/bin"
+export PATH="/usr/local/sbin:$PATH:$HOME/bin:/Applications/Postgres.app/Contents/Versions/latest/bin"
 
 source ~/git-prompt.sh
 
