@@ -8,8 +8,6 @@ source ~/git-prompt.sh
 
 export GIT_PS1_SHOWDIRTYSTATE=1
 
-. ~/.nvm/nvm.sh
-
 if [ -f $(brew --prefix)/etc/bash_completion ]; then
     . $(brew --prefix)/etc/bash_completion
 fi
