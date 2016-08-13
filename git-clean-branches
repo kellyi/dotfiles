@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+set -ex
+
+# delete all merged branches except for master and develop
+git branch --merged | grep -v '\*\|master\|develop' | xargs -n 1 git branch -d
+
