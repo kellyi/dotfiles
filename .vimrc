@@ -20,6 +20,8 @@ set cursorline
 
 set wildmenu
 
+set ruler
+
 set lazyredraw
 
 set incsearch
