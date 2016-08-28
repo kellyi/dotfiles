@@ -1,3 +1,21 @@
+set nocompatible
+filetype off
+
+" add Vundle
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+
+" Vundle plugins
+Plugin 'VundleVim/Vundle.vim'
+Plugin 'elixir-lang/vim-elixir'
+Plugin 'pangloss/vim-javascript'
+Plugin 'mxw/vim-jsx'
+Plugin 'derekwyatt/vim-scala'
+
+" init Vundle plugins
+call vundle#end()            " required
+filetype plugin indent on    " required
+
 " syntax highlighting
 syntax enable
 set showmatch
