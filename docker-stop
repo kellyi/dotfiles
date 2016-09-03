@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+set -ex
+
+osascript -e 'quit app "Docker"'
+
