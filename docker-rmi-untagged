@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+set -ex
+
+docker rmi $(docker images | grep "^<none>" | awk "{print $3}")
