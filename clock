@@ -1,0 +1,24 @@
+#!/usr/bin/env ruby
+
+usage = 'usage: clock [in|out|show] <project> <task>'
+param_options = ['IN', 'OUT', 'SHOW']
+base_storage_file = '~/clock_entries.csv'
+
+def create_entry(in_out, project_name, task)
+    "#{in_out.upcase}, #{project_name}, #{task}, #{Time.now}\n"
+end
+
+if !param_options.include?(ARGV[0].upcase.to_s)
+    puts usage
+else
+    path = File.expand_path(base_storage_file)
+    f = File.exist?(path) ? File.open(path, 'a+') : File.new(path, 'a+')
+    if ARGV[0].upcase.to_s == param_options[2]
+        puts File.read(f)
+    elsif !(ARGV[1] && ARGV[2])
+        puts usage
+    else
+        f.write(create_entry(ARGV[0].to_s, ARGV[1].to_s, ARGV[2].to_s))
+    end
+    f.close
+end
