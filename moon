@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
 
-http -b wttr.in/moon
+curl wttr.in/moon
 
