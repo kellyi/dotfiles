@@ -1,14 +1,12 @@
 #!/usr/bin/env ruby
 require 'webrick'
 
-port = ARGV[0].to_i || 8000
-root = File.expand_path "#{ARGV[1].to_s}" || '.'
-
 mime_types = WEBrick::HTTPUtils::DefaultMimeTypes
-mime_types.store 'js', 'application/javascript'
-mime_types.store 'json', 'application/json'
+mime_types.store('js', 'application/javascript')
+mime_types.store('json', 'application/json')
 
-server = WEBrick::HTTPServer.new :Port => port, :DocumentRoot => root, :MimeTypes => mime_types
-
-server.start
+server = WEBrick::HTTPServer.new(
+    :Port => ARGV[0].to_i || 8000, 
+    :DocumentRoot => File.expand_path("#{ARGV[1].to_s}" || '.'), 
+    :MimeTypes => mime_types).start
 
