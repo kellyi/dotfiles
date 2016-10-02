@@ -22,6 +22,7 @@ task :install do
     files = filtered_files(Dir.entries('.')).partition { |f| f[0] == '.' }
     create_symlink('git-prompt.sh', Dir.home)
     files[0].each { |f| create_symlink(f, Dir.home) }
+    system("mkdir #{Dir.home}/bin") unless File.exist?(Dir.home + "/bin")
     files[1].each { |f| create_symlink(f, "#{Dir.home}/bin") }
     unless File.exist?("#{Dir.home}/.vim/bundle/Vundle.vim")
         system("git config --global core.editor $(which vim)")

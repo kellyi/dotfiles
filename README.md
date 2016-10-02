@@ -1,12 +1,10 @@
 Dotfiles
 ========
 
-Collection of dotfiles and configuration stuff for Bash, Vim, Git, Tmux, Nethack, and IEx, plus some utility scripts.
+Collection of dotfiles and configuration stuff for Bash, Vim, Git, Tmux, Nethack, and IEx, plus some utility scripts, and a [Vundle](https://github.com/VundleVim/Vundle.vim) setup for Vim.
 
-Vim setup uses [Vundle](https://github.com/VundleVim/Vundle.vim). To install Vundle and packages:
+To install, clone this branch, then run:
 
-```sh
-git config --global core.editor $(which vim)
-git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
-vim +PluginInstall +qall
+```
+rake
 ```
