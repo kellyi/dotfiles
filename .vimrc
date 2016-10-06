@@ -11,6 +11,9 @@ Plugin 'elixir-lang/vim-elixir'
 Plugin 'pangloss/vim-javascript'
 Plugin 'mxw/vim-jsx'
 Plugin 'derekwyatt/vim-scala'
+Plugin 'elzr/vim-json'
+Plugin 'vim-ruby/vim-ruby'
+Plugin 'hynek/vim-python-pep8-indent'
 
 " init Vundle plugins
 call vundle#end()            " required
