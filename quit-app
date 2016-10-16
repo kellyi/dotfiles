@@ -1,0 +1,6 @@
+#!/usr/bin/env ruby
+
+app_to_quit = ARGV[0].to_s
+command = "osascript -e " + "'quit app \"" + app_to_quit + "\"'"
+system(command)
+
