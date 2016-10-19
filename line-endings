@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+# from http://stackoverflow.com/questions/121392/how-to-determine-the-line-ending-of-a-file
+perl -p -e 's[\r\n][WIN\n]; s[(?<!WIN)\n][UNIX\n]; s[\r][MAC\n];' $1
