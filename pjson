@@ -4,4 +4,3 @@ require 'json'
 f = ARGV[0].to_s
 
 puts JSON.pretty_generate(JSON.parse(File.read(f)))
-

@@ -2,4 +2,3 @@
 set -ex
 
 osascript -e 'quit app "Docker"'
-

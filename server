@@ -9,4 +9,3 @@ WEBrick::HTTPServer.new(
     :Port => ARGV[0].to_i || 8000, 
     :DocumentRoot => File.expand_path("#{ARGV[1].to_s}" || '.'), 
     :MimeTypes => mime_types).start
-

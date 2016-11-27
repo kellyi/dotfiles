@@ -2,4 +2,3 @@
 set -ex
 
 open /Applications/Docker.app
-
