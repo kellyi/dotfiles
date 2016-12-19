@@ -1,0 +1,7 @@
+#!/usr/bin/env escript
+% escript template
+
+usage() -> io:format("usage: ...\n"), halt(1).
+
+main([Arg]) -> io:format("arg: ~s\n", [Arg]);
+main(_) -> usage().
