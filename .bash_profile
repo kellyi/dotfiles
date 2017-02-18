@@ -5,6 +5,7 @@ export LSCOLORS=ExFxBxDxCxegedabagacad
 export PATH="/usr/local/sbin:/usr/local/bin:$PATH:$HOME/bin:/Applications/Postgres.app/Contents/Versions/latest/bin"
 
 source ~/git-prompt.sh
+source ~/.bashrc
 
 export GIT_PS1_SHOWDIRTYSTATE=1
 
