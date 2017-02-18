@@ -3,7 +3,7 @@ task default: %w[install]
 def filtered_files(files)
     files.reject do |f|
         ['.', '..', 'finderdefaults', '.git', '.gitignore', 'Rakefile',
-         'README.md', 'LICENSE', 'git-prompt.sh'].include?(f)
+         'README.md', 'LICENSE', 'git-prompt.sh', '.erlang'].include?(f)
     end
 end
 
