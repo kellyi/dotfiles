@@ -30,6 +30,7 @@ set softtabstop=4
 set expandtab
 
 " line numbers
+set relativenumber
 set number
 
 " indent to same level as prior line
