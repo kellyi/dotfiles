@@ -1,2 +1,6 @@
 :set prompt "λ> "
+:set -fwarn-unused-imports
+:set -fwarn-unused-binds
+:set -fwarn-name-shadowing
+:set -fwarn-unused-matches
 
