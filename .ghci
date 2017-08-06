@@ -3,4 +3,8 @@
 :set -fwarn-unused-binds
 :set -fwarn-name-shadowing
 :set -fwarn-unused-matches
+:set -Wincomplete-uni-patterns
+:set -Wincomplete-record-updates
+:set -Wmissing-import-lists
+:set -Wall
 
