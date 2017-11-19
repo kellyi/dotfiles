@@ -42,6 +42,7 @@ values."
      scala
      ruby
      typescript
+     react
      ;; ----------------------------------------------------------------
      ;; Example of useful layers you may want to use right away.
      ;; Uncomment some layer names and press <SPC f e R> (Vim style) or
@@ -57,7 +58,7 @@ values."
      (shell :variables
             shell-default-height 30
             shell-default-position 'bottom)
-     spell-checking
+     ;; spell-checking
      syntax-checking
      ;; version-control
      )
@@ -137,13 +138,13 @@ values."
    ;; List of themes, the first of the list is loaded when spacemacs starts.
    ;; Press <SPC> T n to cycle to the next theme in the list (works great
    ;; with 2 themes variants, one dark and one light)
-   dotspacemacs-themes '(spacemacs-dark
-                         spacemacs-light)
+   dotspacemacs-themes '(deeper-blue
+                         spacemacs-dark)
    ;; If non nil the cursor color matches the state color in GUI Emacs.
    dotspacemacs-colorize-cursor-according-to-state t
    ;; Default font, or prioritized list of fonts. `powerline-scale' allows to
    ;; quickly tweak the mode-line size to make separators look not too crappy.
-   dotspacemacs-default-font '("Menlo"
+   dotspacemacs-default-font '("Fira Mono for Powerline"
                                :size 16
                                :weight normal
                                :width normal
@@ -231,7 +232,7 @@ values."
    dotspacemacs-loading-progress-bar t
    ;; If non nil the frame is fullscreen when Emacs starts up. (default nil)
    ;; (Emacs 24.4+ only)
-   dotspacemacs-fullscreen-at-startup nil
+   dotspacemacs-fullscreen-at-startup t
    ;; If non nil `spacemacs/toggle-fullscreen' will not use native fullscreen.
    ;; Use to disable fullscreen animations in OSX. (default nil)
    dotspacemacs-fullscreen-use-non-native nil
@@ -309,6 +310,7 @@ executes.
  This function is mostly useful for variables that need to be set
 before packages are loaded. If you are unsure, you should try in setting them in
 `dotspacemacs/user-config' first."
+  (spacemacs/toggle-display-time-on)
   )
 
 (defun dotspacemacs/user-config ()
@@ -318,6 +320,27 @@ layers configuration.
 This is the place where most of your configurations should be done. Unless it is
 explicitly specified that a variable should be set before a package is loaded,
 you should place your code here."
+  (server-start)
+  (setq powerline-default-separator 'arrow)
+  (defun handle-delete-frame-without-kill-emacs (event)
+    "Handle delete-frame events from the X server."
+    (interactive "e")
+    (let ((frame (posn-window (event-start event)))
+          (i 0)
+          (tail (frame-list)))
+      (while tail
+        (and (frame-visible-p (car tail))
+             (not (eq (car tail) frame))
+             (setq i (1+ i)))
+        (setq tail (cdr tail)))
+      (if (> i 0)
+          (delete-frame frame t)
+        ;; Not (save-buffers-kill-emacs) but instead:
+        (ns-do-hide-emacs))))
+
+  (when (eq system-type 'darwin)
+    (advice-add 'handle-delete-frame :override
+                #'handle-delete-frame-without-kill-emacs))
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
