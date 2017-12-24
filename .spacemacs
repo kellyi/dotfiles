@@ -339,6 +339,27 @@ you should place your code here."
   (server-start)
   (display-time-mode)
   (setq powerline-default-separator 'arrow)
+  (defun parenthesize ()
+    (interactive)
+    (beginning-of-thing 'word)
+    (insert "(")
+    (end-of-thing 'word)
+    (insert ")"))
+
+  (defun quotify ()
+    (interactive)
+    (beginning-of-thing 'word)
+    (insert "'")
+    (end-of-thing 'word)
+    (insert "'"))
+
+  (defun double-quotify ()
+    (interactive)
+    (beginning-of-thing 'word)
+    (insert "\"")
+    (end-of-thing 'word)
+    (insert "\""))
+
   (defun handle-delete-frame-without-kill-emacs (event)
     "Handle delete-frame events from the X server."
     (interactive "e")
