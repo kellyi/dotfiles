@@ -1,0 +1,4 @@
+#!/usr/bin/env ruby
+
+system "pmset -g batt | tail -n 1 | awk '{print $3}' | rev | cut -c 2- | rev"
+
