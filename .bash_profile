@@ -16,4 +16,4 @@ fi
 export NVM_DIR="$HOME/.nvm"
   . "$(brew --prefix nvm)/nvm.sh"
 
-export PATH="$HOME/.cargo/bin:$PATH"
+# eval "$(rbenv init -)"
